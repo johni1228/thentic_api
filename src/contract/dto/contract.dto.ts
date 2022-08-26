@@ -21,14 +21,12 @@ export class ContractDto {
   @ApiProperty({
     description: 'URL to receive webhook',
     required: false,
-    default: ''
   })
-  webhook_url: Number;
+  webhook_url: string;
 
   @ApiProperty({
     description: 'URL to re_direct',
     required: false,
-    default: ''
   })
   redirect_url: string;
 

@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsString, IsNumber, Contains } from 'class-validator'
 
-export class NFT {
+export class MintNFT {
   @ApiProperty()
   @IsString()
   key: string;
@@ -16,7 +16,7 @@ export class NFT {
 
   @ApiProperty({ description: 'A tokenID ' })
   @IsNumber()
-  nft_id: string;
+  nft_id: Number;
 
   @ApiProperty({ description: 'Data encoded in NFT ' })
   @IsString()
@@ -31,7 +31,7 @@ export class NFT {
     required: false,
     default: ''
   })
-  webhook_url: Number;
+  webhook_url: string;
 
   @ApiProperty({
     description: 'URL to re_direct',
@@ -41,3 +41,44 @@ export class NFT {
   redirect_url: string;
 
 }
+
+export class TransferNFT {
+  @ApiProperty()
+  @IsString()
+  key: string;
+
+  @ApiProperty({ description: 'Blockchain network ID' })
+  @IsNumber()
+  chain_id: Number;
+
+  @ApiProperty({ description: 'A name of contract' })
+  @IsString()
+  contract: string;
+
+  @ApiProperty({ description: 'A tokenID ' })
+  @IsNumber()
+  nft_id: Number;
+
+  @ApiProperty({ description: 'Address of NFT owner ' })
+  @IsString()
+  from: string;
+
+  @ApiProperty({ description: 'Address of receive ' })
+  @IsString()
+  to: string;
+
+  @ApiProperty({
+    description: 'URL to receive webhook',
+    required: false,
+    default: ''
+  })
+  webhook_url: string;
+
+  @ApiProperty({
+    description: 'URL to re_direct',
+    required: false,
+    default: ''
+  })
+  redirect_url: string;
+}
+
