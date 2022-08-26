@@ -33,3 +33,14 @@ export class ContractDto {
   redirect_url: string;
 
 }
+
+export class ShowContractDto {
+  @ApiProperty()
+  @IsString()
+  key: string;
+
+  @ApiProperty({ description: 'Blockchain network ID' })
+  @IsNumber()
+  chain_id: Number;
+
+}

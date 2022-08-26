@@ -1,8 +1,17 @@
 export interface Contract {
+  'chain_id': string,
+  'contract': string,
+  'name': string,
+  'short_name': string,
   'request_id': string,
   'status': string,
   'transaction_pixel': string,
   'transaction_url': string
+}
+
+export interface ShowContractInterface {
+  'key': string,
+  'chain_id': Number
 }
 
 export const ThenticAPI = {
